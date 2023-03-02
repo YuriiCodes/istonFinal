@@ -1,0 +1,14 @@
+@import 'styles/config';
+
+.footer {
+  @include section(40, 40, 25, 25);
+
+  position: sticky;
+  top: 100vh;
+
+  background: var(--color-secondary, var(--color-background));
+
+  &:empty {
+    display: block;
+  }
+}

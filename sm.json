@@ -1,0 +1,9 @@
+{
+  "apiEndpoint": "https://istonmac.cdn.prismic.io/api/v2",
+  "_latest": "0.5.2",
+  "libraries": ["@/src/prismic/slices"],
+  "framework": "next",
+  "generateTypes": false,
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}
+

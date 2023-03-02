@@ -1,0 +1,27 @@
+@import 'styles/config';
+@import 'styles/variables';
+
+.newsCard{
+  padding-top:  32px;
+  padding-bottom:  32px;
+
+  border-top: 1px solid $color-border;
+  &__titleBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    &__title{
+     width: 80%;
+    }
+
+    &__titleLinkBlock {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+    }
+    &__publishedDate{
+      color: $color-date;
+    }
+  }
+}

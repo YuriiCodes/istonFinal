@@ -1,0 +1,11 @@
+.sliderItem {
+  display: flex;
+  align-items: stretch;
+  flex: none;
+
+  position: relative;
+
+  // these are for examples only, set project-specific values here
+  width: clamp(250px, 20vw, 400px);
+  min-height: 400px;
+}

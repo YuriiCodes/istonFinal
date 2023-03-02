@@ -1,0 +1,103 @@
+{
+  "id": "interesting_links",
+  "type": "SharedSlice",
+  "name": "InterestingLinks",
+  "description": "InterestingLinks",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "InterestingLinks",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your feature"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "link1text": {
+          "type": "Text",
+          "config": {
+            "label": "link1Text",
+            "placeholder": ""
+          }
+        },
+        "link2text": {
+          "type": "Text",
+          "config": {
+            "label": "link2text",
+            "placeholder": ""
+          }
+        },
+        "link3text": {
+          "type": "Text",
+          "config": {
+            "label": "link3text",
+            "placeholder": ""
+          }
+        },
+        "link4text": {
+          "type": "Text",
+          "config": {
+            "label": "link4text",
+            "placeholder": ""
+          }
+        },
+        "link1": {
+          "type": "Link",
+          "config": {
+            "label": "link1",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link2": {
+          "type": "Link",
+          "config": {
+            "label": "link2",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link3": {
+          "type": "Link",
+          "config": {
+            "label": "link3",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link4": {
+          "type": "Link",
+          "config": {
+            "label": "link4",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

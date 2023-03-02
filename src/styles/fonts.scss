@@ -1,0 +1,41 @@
+// example of static font file css declarations
+// for google fonts / typekit, use this: https://nextjs.org/docs/basic-features/font-optimization
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+
+  src: local('Poppins Regular'), local('Poppins-Regular'),
+    url('/fonts/poppins-v9-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+
+  src: local('Poppins Bold'), local('Poppins-Bold'),
+    url('/fonts/poppins-v9-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+
+  src: local('Gentium Basic'), local('GentiumBasic'),
+    url('/fonts/gentium-basic-v11-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+
+  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'),
+    url('/fonts/gentium-basic-v11-latin-700.woff2') format('woff2');
+}

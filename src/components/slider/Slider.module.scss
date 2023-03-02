@@ -1,0 +1,52 @@
+@import 'styles/config';
+
+.slider {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  &.active {
+    scroll-snap-type: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__track {
+    @include container;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--gutter);
+
+    user-select: none;
+
+    &::after {
+      content: '';
+
+      display: block;
+      flex: none;
+
+      width: var(--container-gutter);
+    }
+
+    // is actively dragging and has something to drag
+    .active:not(.inactive) & {
+      cursor: grabbing;
+    }
+
+    // stop accidental link clicks on children
+    .isDragging & > * {
+      pointer-events: none;
+    }
+  }
+
+  &:not(.inactive) &__track {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+  }
+}

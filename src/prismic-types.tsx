@@ -143,7 +143,7 @@ export type FrontpageConnectionEdge = {
   node: Frontpage;
 };
 
-export type FrontpageSlices = FrontpageSlicesHome_Hero_Slice | FrontpageSlicesImage | FrontpageSlicesInteresting_Links | FrontpageSlicesMarketing_Block | FrontpageSlicesSlide_Show | FrontpageSlicesText | FrontpageSlicesVideo;
+export type FrontpageSlices = FrontpageSlicesHome_Hero_Slice | FrontpageSlicesImage | FrontpageSlicesInteresting_Links | FrontpageSlicesLatest_Articles | FrontpageSlicesMarketing_Block | FrontpageSlicesSlide_Show | FrontpageSlicesText | FrontpageSlicesVideo;
 
 export type FrontpageSlicesHome_Hero_Slice = {
   __typename?: 'FrontpageSlicesHome_hero_slice';
@@ -215,6 +215,25 @@ export type FrontpageSlicesInteresting_LinksDefaultPrimary = {
 };
 
 export type FrontpageSlicesInteresting_LinksVariation = FrontpageSlicesInteresting_LinksDefault;
+
+export type FrontpageSlicesLatest_Articles = {
+  __typename?: 'FrontpageSlicesLatest_articles';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<FrontpageSlicesLatest_ArticlesVariation>;
+};
+
+export type FrontpageSlicesLatest_ArticlesDefault = {
+  __typename?: 'FrontpageSlicesLatest_articlesDefault';
+  primary?: Maybe<FrontpageSlicesLatest_ArticlesDefaultPrimary>;
+};
+
+export type FrontpageSlicesLatest_ArticlesDefaultPrimary = {
+  __typename?: 'FrontpageSlicesLatest_articlesDefaultPrimary';
+  title?: Maybe<Scalars['Json']>;
+};
+
+export type FrontpageSlicesLatest_ArticlesVariation = FrontpageSlicesLatest_ArticlesDefault;
 
 export type FrontpageSlicesMarketing_Block = {
   __typename?: 'FrontpageSlicesMarketing_block';

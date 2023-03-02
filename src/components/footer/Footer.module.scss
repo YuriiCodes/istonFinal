@@ -1,14 +1,68 @@
 @import 'styles/config';
 
 .footer {
-  @include section(40, 40, 25, 25);
+  background-color: $color-slideshow;
+  color: $color-font-contrast;
+  width: 100%;
 
-  position: sticky;
-  top: 100vh;
-
-  background: var(--color-secondary, var(--color-background));
-
-  &:empty {
-    display: block;
+  &__section{
+    display:flex;
+    justify-content: space-around;
+    @media (max-width: $min-tablet) {
+      flex-direction: column;
+    }
   }
+  &__title {
+    font-size: 78px;
+  }
+  &__logoAndTitle {
+    display: flex;
+    width: 100%;
+  }
+
+  &__emailInput {
+    border: 1px solid $color-border;
+    display: flex;
+    justify-content: space-between;
+
+    &__imageSection {
+      display: flex;
+      align-items: center;
+      padding-left: 150px;
+      background-color: $color-slideshow;
+      border: none;
+      width: 100%;
+    }
+    input {
+      border: none;
+      background-color: $color-slideshow;
+      color: $color-font-contrast;
+      padding: 10px;
+      width: 100%;
+    }
+   input:focus{
+     outline: none;
+   }
+  }
+  .bottomHeaders{
+    padding-top: 400px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $min-tablet){
+      flex-direction: column;
+    }
+    &__header{
+      font-size: 5em;
+      font-weight: 900;
+      margin: 0;
+    }
+    &__header:nth-child(1) {
+      color: $color-date;
+    }
+    &__header:nth-child(2) {
+      color: $color-orange;
+    }
+
+  }
+
 }

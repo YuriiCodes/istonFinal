@@ -182,37 +182,7 @@ export default function StarterHome() {
         />
       </Section>
 
-      <Section container>
-        <H3 as="h2">
-          <code>&lt;Video&gt;</code> component
-        </H3>
-        <RichTextStatic>
-          <p style={{ marginBottom: '2rem' }}>
-            video component with options <code>loop</code>, <code>autoplay</code> and{' '}
-            <code>addLayout</code>
-          </p>
-        </RichTextStatic>
-        <Video
-          addLayout
-          autoplay
-          loop
-          src="/videos/temp/temp.mp4"
-          width={960}
-          height={540}
-          poster="/videos/temp/poster.jpg"
-        />
-        <RichTextStatic>
-          <p style={{ margin: '2rem 0' }}>
-            video with no options, constrained by parent layout (default){' '}
-            <code>addLayout=false</code>
-          </p>
-        </RichTextStatic>
-        <div
-          style={{ position: 'relative', width: 'min(100%, 700px)', height: '50vmin' }}
-        >
-          <Video src="/videos/temp/temp.mp4" width={960} height={540} />
-        </div>
-      </Section>
+
 
       <Section container>
         <H2>

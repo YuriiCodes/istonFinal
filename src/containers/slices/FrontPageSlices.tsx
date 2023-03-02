@@ -6,7 +6,7 @@ import {
   FrontpageSlices,
   FrontpageSlicesHome_Hero_Slice,
   FrontpageSlicesHome_Hero_SliceDefault, FrontpageSlicesImage,
-  FrontpageSlicesMarketing_Block,
+  FrontpageSlicesMarketing_Block, FrontpageSlicesSlide_Show,
   PageSlices as PrismicPageSlices,
   PageSlicesImage,
   PageSlicesText,
@@ -23,6 +23,7 @@ import {
 import {
   FrontPageImageSlice
 } from "../../components/front-page-image-slice/FrontPageImageSlice";
+import {CarouselSlice} from "../../components/carouselSlice/CarouselSlice";
 
 type Props = {
   data?: Array<FrontpageSlices>;
@@ -62,12 +63,12 @@ export function FrontPageSlices({data = []}: Props) {
               <FrontPageImageSlice key={key} slice={slice}/>
             );
           }
-          case 'FrontpageSlicesSlide_show':
+          case 'FrontpageSlicesSlide_show': {
+            const slice = s as FrontpageSlicesSlide_Show;
             return (
-              <Section key={key}>
-                <h1>slideshow</h1>
-              </Section>
+              <CarouselSlice key={key} slice={slice}/>
             )
+          }
           default:
             logger.info(`unknown slice type ${s.__typename}`, {metadata: {slice: s}});
             return null;

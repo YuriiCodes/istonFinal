@@ -12,12 +12,16 @@
       flex-direction: column;
     }
   }
+  &__section:first-child{
+    padding-bottom: 20em;
+  }
   &__title {
     font-size: 78px;
   }
   &__logoAndTitle {
     display: flex;
     width: 100%;
+    justify-content: space-between;
   }
 
   &__emailInput {
@@ -45,7 +49,7 @@
    }
   }
   .bottomHeaders{
-    padding-top: 400px;
+    padding-top: 8em;
     display: flex;
     justify-content: space-between;
     @media (max-width: $min-tablet){
@@ -62,7 +66,19 @@
     &__header:nth-child(2) {
       color: $color-orange;
     }
-
   }
 
+  .smallText {
+    margin-right: 1em;
+  }
+  .smallText:after {
+    content: '|';
+    margin-left: 1em;
+  }
+  .smallText:last-child:after {
+    content: '';
+  }
+  .navs {
+    margin-top: 5em;
+  }
 }

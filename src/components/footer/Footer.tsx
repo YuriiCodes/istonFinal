@@ -17,19 +17,19 @@ export const Footer = () => {
         <div className={s.footer__section}>
           <div>
             {/*Logo and title*/}
-            <div>
+            <div className={s.footer__logoAndTitle}>
               <Image src={"/images/Logo-item.png"} width={100} height={100} alt={"logo"}/>
               <h1 className={s.footer__title}>Vertu í sambandi</h1>
             </div>
             <div>
               {/*Contacts*/}
-              <span>iston2022@gmail.com  | </span>
-              <span>Rauðagerði 27, 105 Reykjavík</span>
+              <span className={s.smallText}>iston2022@gmail.com</span>
+              <span className={s.smallText}>Rauðagerði 27, 105 Reykjavík</span>
             </div>
           </div>
           <div>
           {/*Navs*/}
-            <div>
+            <div className={s.navs}>
               <p>Verðlaunahafar</p>
               <p>Um Ístón</p>
               <p>Stjórn</p>
@@ -42,9 +42,9 @@ export const Footer = () => {
       {/*Soicals*/}
       <div className={s.footer__section}>
         <div>
-          <span>Instagram</span>
-          <span>Twitter</span>
-          <span>Facebook</span>
+          <span className={s.smallText}>Instagram</span>
+          <span className={s.smallText}>Twitter</span>
+          <span className={s.smallText}>Facebook</span>
         </div>
         <div>
           <div className={s.footer__emailInput}>

@@ -3,8 +3,13 @@
 .linkWithText {
   font-weight: bold;
   display: flex;
-  color: $color-font-contrast;
   & > span {
     margin-right: 20px;
   }
+}
+.linkLight{
+  color: $color-font-contrast;
+}
+.linkDark{
+  color: $color-font;
 }

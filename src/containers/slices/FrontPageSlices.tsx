@@ -50,7 +50,7 @@ export function FrontPageSlices({data = []}: Props) {
           case 'FrontpageSlicesMarketing_block': {
             const slice = s as FrontpageSlicesMarketing_Block;
             return (
-              <MarketingBlockSlice s={slice} key={key}/>
+              <MarketingBlockSlice slice={slice} key={key}/>
             );
           }
           case 'FrontpageSlicesImage':

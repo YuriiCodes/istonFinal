@@ -17,6 +17,7 @@ import {prismicSliceToImageSlice} from "../../prismic/slices/Image/ImageSlice";
 import s from "./HomeHeroSlice.module.scss";
 import {ArrowLink} from "../arrowLink/arrowLink";
 import {ArrowLinkWithText} from "../arrowLink/arrowLinkWithText";
+import Link from "next/link";
 
 type Props = {
   slice: FrontpageSlicesHome_Hero_Slice,
@@ -260,7 +261,7 @@ export const HomeHeroSlice = ({slice}: Props) => {
       </div>
       <h2 className={s.canvas__title}>{(slice.variation?.primary?.title[0]?.text)}</h2>
       <div className={s.canvas__actions}>
-        <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"} />
+        <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"}/>
       </div>
       <div className={s.canvas__image}>
         {prismicSliceToImageSlice(slice as PageSlicesImage)}
@@ -270,7 +271,11 @@ export const HomeHeroSlice = ({slice}: Props) => {
           className={s.secondaryArea__secondaryTitle}>{slice.variation?.primary?.secondatytitle}</h1>
         <div className={s.secondaryArea__descriptionArea}>
           <p>{slice.variation?.primary?.description[0]?.text}</p>
-          <button className={s.secondaryArea__ctaButton}>Sjá nánar</button>
+          <a href={"/"}>
+            <button className={s.secondaryArea__ctaButton}>
+              Sjá nánar
+            </button>
+          </a>
         </div>
       </div>
     </>

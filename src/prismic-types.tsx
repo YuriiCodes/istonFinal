@@ -232,7 +232,7 @@ export type FrontpageSlicesMarketing_BlockDefaultPrimary = {
   __typename?: 'FrontpageSlicesMarketing_blockDefaultPrimary';
   ctalink?: Maybe<_Linkable>;
   image?: Maybe<Scalars['Json']>;
-  title?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
 };
 
 export type FrontpageSlicesMarketing_BlockVariation = FrontpageSlicesMarketing_BlockDefault;

@@ -10,6 +10,7 @@ export const frontpageFragment =  /* GraphQL */ `
             ... on FrontpageSlicesMarketing_blockDefault{
               primary {
                 image,
+                text
               }
             }
           }

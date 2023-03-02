@@ -19,10 +19,10 @@
             "thumbnails": []
           }
         },
-        "title": {
+        "text": {
           "type": "Text",
           "config": {
-            "label": "title",
+            "label": "text",
             "placeholder": ""
           }
         },

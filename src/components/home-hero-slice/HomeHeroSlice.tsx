@@ -15,6 +15,7 @@ import {FrontpageSlicesHome_Hero_Slice, PageSlicesImage} from "../../prismic-typ
 import {prismicSliceToImageSlice} from "../../prismic/slices/Image/ImageSlice";
 
 import s from "./HomeHeroSlice.module.scss";
+import {ArrowLink} from "../arrowLink/arrowLink";
 
 type Props = {
   slice: FrontpageSlicesHome_Hero_Slice,
@@ -256,10 +257,22 @@ export const HomeHeroSlice = ({slice}: Props) => {
         {fps && <Stats/>}
 
       </div>
-      <pre>Title: {(slice.variation?.primary?.title[0]?.text)}</pre>
-      <pre>Secondary: title{JSON.stringify(slice.variation?.primary?.secondatytitle)}</pre>
-      <pre>Description: {slice.variation?.primary?.description[0]?.text}</pre>
-      {prismicSliceToImageSlice(slice as PageSlicesImage)}
+      <h2 className={s.canvas__title}>{(slice.variation?.primary?.title[0]?.text)}</h2>
+      <div className={s.canvas__actions}>
+        <span>Sjá nánar</span>
+        <ArrowLink to={"https://google.com"} />
+      </div>
+      <div className={s.canvas__image}>
+        {prismicSliceToImageSlice(slice as PageSlicesImage)}
+      </div>
+      <div className={s.secondaryArea}>
+        <h1
+          className={s.secondaryArea__secondaryTitle}>{slice.variation?.primary?.secondatytitle}</h1>
+        <div className={s.secondaryArea__descriptionArea}>
+          <p>{slice.variation?.primary?.description[0]?.text}</p>
+          <button className={s.secondaryArea__ctaButton}>Sjá nánar</button>
+        </div>
+      </div>
     </>
   )
 }

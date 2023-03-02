@@ -1,7 +1,71 @@
+@import 'styles/config';
 .canvas {
   height: 1020px;
   width: 100%;
-  position: absolute;
+  position: relative;
+  z-index: $zindex-hero;
   top: 0px;
   left: 0px;
+
+  &__title {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    max-width: 50vw;
+    z-index: $zindex-hero;
+    color: $color-font-contrast;
+    font-size: 54px;
+  }
+  &__actions {
+    position: absolute;
+    font-weight: bold;
+    display: flex;
+    color: $color-font-contrast;
+    top: 17%;
+    left: 80%;
+    z-index: $zindex-hero;
+    & > span {
+      margin-right: 20px;
+    }
+  }
+  &__image {
+    position: absolute;
+    top: 33%;
+    left: 10%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: $zindex-hero;
+  }
+}
+.secondaryArea {
+  background: $color-date;
+  height: 665px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__ctaButton{
+    margin-top: 5vh;
+    padding: 30px;
+    background-color: $color-date-background;
+    font-size: 24px;
+    max-width: 35vw;
+  }
+
+  &__secondaryTitle {
+    padding-top: 12vh;
+    line-height: 70px;
+    margin-left: 3vw;
+    color: $color-font-contrast;
+    font-size: 68px;
+    max-width: 35vw;
+  }
+  &__descriptionArea{
+    padding-top: 12vh;
+    margin-right: 3vw;
+    color: $color-font-contrast;
+    font-size: 24px;
+    max-width: 35vw;
+  }
 }

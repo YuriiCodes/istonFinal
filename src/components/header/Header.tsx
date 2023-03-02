@@ -6,16 +6,19 @@ import { useUiState } from 'hooks/useUiState';
 
 import s from './Header.module.scss';
 import {Picture} from "../picture/Picture";
+import {useIsMainPage} from "../../hooks/useIsMainPage";
 
 type HeaderProps = { children?: React.ReactNode };
 
 export const Header = ({ children }: HeaderProps) => {
   const { setUIState } = useUiState();
+  const isMainPage = useIsMainPage();
+  console.log("isMainPage", isMainPage)
 
   const headerRef = useRef<HTMLElement>(null);
 
   return (
-    <header className={s.header} ref={headerRef}>
+    <header className={s.header + " " + isMainPage ? s.headerMain : s.headerSecondary} ref={headerRef}>
       <div className={s.header__container}>
         <a tabIndex={0} className={s.header__skip} href="#main">
           Skip to content

@@ -49,6 +49,14 @@ export const frontpageFragment =  /* GraphQL */ `
         ... on FrontpageSlicesImage {
           type
           label
+              variation{
+            __typename
+            ... on FrontpageSlicesImageDefault {
+              primary {
+                image
+              }
+            }
+          }
         }
       }
     }

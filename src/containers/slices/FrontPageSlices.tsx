@@ -5,7 +5,7 @@ import {
   ArticleSlicesText,
   FrontpageSlices,
   FrontpageSlicesHome_Hero_Slice,
-  FrontpageSlicesHome_Hero_SliceDefault,
+  FrontpageSlicesHome_Hero_SliceDefault, FrontpageSlicesImage,
   FrontpageSlicesMarketing_Block,
   PageSlices as PrismicPageSlices,
   PageSlicesImage,
@@ -20,6 +20,9 @@ import {HomeHeroSlice} from "../../components/home-hero-slice/HomeHeroSlice";
 import {
   MarketingBlockSlice
 } from "../../components/marketing-block-slice/MarketingBlockSlice";
+import {
+  FrontPageImageSlice
+} from "../../components/front-page-image-slice/FrontPageImageSlice";
 
 type Props = {
   data?: Array<FrontpageSlices>;
@@ -53,12 +56,12 @@ export function FrontPageSlices({data = []}: Props) {
               <MarketingBlockSlice slice={slice} key={key}/>
             );
           }
-          case 'FrontpageSlicesImage':
+          case 'FrontpageSlicesImage': {
+            const slice = s as FrontpageSlicesImage;
             return (
-              <Section key={key}>
-                <h1>image</h1>
-              </Section>
+              <FrontPageImageSlice key={key} slice={slice}/>
             );
+          }
           case 'FrontpageSlicesSlide_show':
             return (
               <Section key={key}>

@@ -18,15 +18,10 @@
   }
   &__actions {
     position: absolute;
-    font-weight: bold;
-    display: flex;
-    color: $color-font-contrast;
+
     top: 17%;
     left: 80%;
     z-index: $zindex-hero;
-    & > span {
-      margin-right: 20px;
-    }
   }
   &__image {
     position: absolute;

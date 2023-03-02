@@ -16,6 +16,7 @@ import {prismicSliceToImageSlice} from "../../prismic/slices/Image/ImageSlice";
 
 import s from "./HomeHeroSlice.module.scss";
 import {ArrowLink} from "../arrowLink/arrowLink";
+import {ArrowLinkWithText} from "../arrowLink/arrowLinkWithText";
 
 type Props = {
   slice: FrontpageSlicesHome_Hero_Slice,
@@ -259,8 +260,7 @@ export const HomeHeroSlice = ({slice}: Props) => {
       </div>
       <h2 className={s.canvas__title}>{(slice.variation?.primary?.title[0]?.text)}</h2>
       <div className={s.canvas__actions}>
-        <span>Sjá nánar</span>
-        <ArrowLink to={"https://google.com"} />
+        <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"} />
       </div>
       <div className={s.canvas__image}>
         {prismicSliceToImageSlice(slice as PageSlicesImage)}

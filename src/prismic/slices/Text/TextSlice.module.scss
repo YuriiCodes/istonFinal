@@ -1,0 +1,6 @@
+@import 'styles/config';
+
+.container {
+  @include container;
+  width: 40%;
+}

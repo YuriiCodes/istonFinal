@@ -4,6 +4,9 @@ import { ArticleSlicesText, PageSlicesText } from 'prismic-types';
 import { H2 } from 'components/heading/Heading';
 import { asText, RichText } from 'components/rich-text/RichText';
 
+import s from "./TextSlice.module.scss";
+import {Section} from "../../../components/section/Section";
+
 type Props = {
   title?: PrismicRichText;
   text: PrismicRichText;
@@ -15,10 +18,10 @@ function TextSlice({ title, text }: Props) {
   }
 
   return (
-    <>
+    <div className={s.container}>
       {title && <H2>{asText(title)}</H2>}
       <RichText>{text}</RichText>
-    </>
+    </div>
   );
 }
 

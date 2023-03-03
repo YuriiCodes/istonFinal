@@ -49,7 +49,7 @@ export type ArticleConnectionEdge = {
   node: Article;
 };
 
-export type ArticleSlices = ArticleSlicesImage | ArticleSlicesText | ArticleSlicesVideo;
+export type ArticleSlices = ArticleSlicesImage | ArticleSlicesSlide_Show | ArticleSlicesText | ArticleSlicesVideo;
 
 export type ArticleSlicesImage = {
   __typename?: 'ArticleSlicesImage';
@@ -69,6 +69,35 @@ export type ArticleSlicesImageDefaultPrimary = {
 };
 
 export type ArticleSlicesImageVariation = ArticleSlicesImageDefault;
+
+export type ArticleSlicesSlide_Show = {
+  __typename?: 'ArticleSlicesSlide_show';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<ArticleSlicesSlide_ShowVariation>;
+};
+
+export type ArticleSlicesSlide_ShowDefault = {
+  __typename?: 'ArticleSlicesSlide_showDefault';
+  items?: Maybe<Array<ArticleSlicesSlide_ShowDefaultItems>>;
+  primary?: Maybe<ArticleSlicesSlide_ShowDefaultPrimary>;
+};
+
+export type ArticleSlicesSlide_ShowDefaultItems = {
+  __typename?: 'ArticleSlicesSlide_showDefaultItems';
+  image1?: Maybe<Scalars['Json']>;
+  image2?: Maybe<Scalars['Json']>;
+  image3?: Maybe<Scalars['Json']>;
+  image4?: Maybe<Scalars['Json']>;
+  image5?: Maybe<Scalars['Json']>;
+};
+
+export type ArticleSlicesSlide_ShowDefaultPrimary = {
+  __typename?: 'ArticleSlicesSlide_showDefaultPrimary';
+  title?: Maybe<Scalars['Json']>;
+};
+
+export type ArticleSlicesSlide_ShowVariation = ArticleSlicesSlide_ShowDefault;
 
 export type ArticleSlicesText = {
   __typename?: 'ArticleSlicesText';
@@ -143,7 +172,7 @@ export type FrontpageConnectionEdge = {
   node: Frontpage;
 };
 
-export type FrontpageSlices = FrontpageSlicesHome_Hero_Slice | FrontpageSlicesImage | FrontpageSlicesInteresting_Links | FrontpageSlicesLatest_Articles | FrontpageSlicesMarketing_Block | FrontpageSlicesSlide_Show | FrontpageSlicesText | FrontpageSlicesVideo;
+export type FrontpageSlices = FrontpageSlicesHome_Hero_Slice | FrontpageSlicesImage | FrontpageSlicesInteresting_Links | FrontpageSlicesMarketing_Block | FrontpageSlicesSlide_Show | FrontpageSlicesText | FrontpageSlicesVideo;
 
 export type FrontpageSlicesHome_Hero_Slice = {
   __typename?: 'FrontpageSlicesHome_hero_slice';
@@ -215,25 +244,6 @@ export type FrontpageSlicesInteresting_LinksDefaultPrimary = {
 };
 
 export type FrontpageSlicesInteresting_LinksVariation = FrontpageSlicesInteresting_LinksDefault;
-
-export type FrontpageSlicesLatest_Articles = {
-  __typename?: 'FrontpageSlicesLatest_articles';
-  label?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  variation?: Maybe<FrontpageSlicesLatest_ArticlesVariation>;
-};
-
-export type FrontpageSlicesLatest_ArticlesDefault = {
-  __typename?: 'FrontpageSlicesLatest_articlesDefault';
-  primary?: Maybe<FrontpageSlicesLatest_ArticlesDefaultPrimary>;
-};
-
-export type FrontpageSlicesLatest_ArticlesDefaultPrimary = {
-  __typename?: 'FrontpageSlicesLatest_articlesDefaultPrimary';
-  title?: Maybe<Scalars['Json']>;
-};
-
-export type FrontpageSlicesLatest_ArticlesVariation = FrontpageSlicesLatest_ArticlesDefault;
 
 export type FrontpageSlicesMarketing_Block = {
   __typename?: 'FrontpageSlicesMarketing_block';

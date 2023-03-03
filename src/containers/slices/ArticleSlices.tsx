@@ -11,6 +11,7 @@ import {
 import { Section } from 'components/section/Section';
 
 import { logger } from 'utils/logger';
+import {CarouselSlice} from "../../components/carouselSlice/CarouselSlice";
 
 type Props = {
   data?: Array<PrismicArticleSlices>;
@@ -44,9 +45,16 @@ export function ArticleSlices({ data = [] }: Props) {
               </Section>
             );
 
-          default:
-            logger.info(`unknown slice type ${s.type}`, { metadata: { slice: s } });
+          default: {
+            // Might be a custom slice
+            if (s.__typename === 'ArticleSlicesSlide_show') {
+              // console.log(JSON.stringify(s));
+              // return <pre>{JSON.stringify(s)}</pre>
+              // return <CarouselSlice key={key} slice={s}/>
+            }
+            logger.info(`unknown slice type ${s.type}`, {metadata: {slice: s}});
             return null;
+          }
         }
       })}
     </>

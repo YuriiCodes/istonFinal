@@ -58,6 +58,9 @@
             },
             "video": {
               "type": "SharedSlice"
+            },
+            "slide_show": {
+              "type": "SharedSlice"
             }
           }
         }

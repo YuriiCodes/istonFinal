@@ -14,6 +14,10 @@ import { ArticleSlices } from 'containers/slices/ArticleSlices';
 
 import { ExcludesFalse } from 'utils/excludesFalse';
 import { localeToPrismicLocale } from 'utils/i18n';
+import {ArticleHeader} from "../../../components/article-header/ArticleHeader";
+import {
+  ArticleDescription
+} from "../../../components/article-description/ArticleDescription";
 
 export type ArticleProps = {
   preview: boolean;
@@ -41,8 +45,8 @@ export default function ArticleComponent(
       <PrismicMeta data={article} layout={data.layout} />
       <article>
         <Section>
-          <H1>{asText(article.title)}</H1>
-          <RichText>{article.description}</RichText>
+          <ArticleHeader article={article} />
+          <ArticleDescription article={article} />
         </Section>
 
         <ArticleSlices data={article.slices ?? []} />

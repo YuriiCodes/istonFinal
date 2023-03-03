@@ -1,0 +1,25 @@
+@import 'styles/config';
+
+.articleHeader {
+  background-color: $color-slideshow;
+  color: $color-font-contrast;
+  height: 60vh;
+  position: relative;
+
+  &__textData {
+    display: flex;
+    @media (max-width: $min-tablet) {
+      flex-direction: column;
+    }
+    h1 {
+      margin-left: 6em;
+    }
+  }
+
+  &__image{
+    position: absolute;
+    left: 25%;
+    top: 20%;
+  }
+}
+

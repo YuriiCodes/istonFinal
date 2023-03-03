@@ -2,7 +2,7 @@ import {prismicSliceToImageSlice} from "../../prismic/slices/Image/ImageSlice";
 import {FrontpageSlicesMarketing_Block, PageSlicesImage} from "../../prismic-types";
 import {UIBreakpoints} from "../../types/ui";
 import {GridLayout, GridLayoutItem} from "../grid/GridLayout";
-import {ArrowLinkWithText} from "../arrowLink/arrowLinkWithText";
+import {ArrowLinkWithText} from "../arrow-link/arrowLinkWithText";
 import styles from "./MarketingBlockSlice.module.scss"
 type MarketingBlockSliceProps = {
   slice: FrontpageSlicesMarketing_Block;

@@ -1,0 +1,14 @@
+@import 'styles/config';
+
+.descriptionSection {
+  background-color: $color-secondary;
+  margin-top: 20vh;
+  &__title {
+    @include h2;
+    margin-left: 8em;
+    margin-bottom: 2em;
+    text-align: center;
+    width: 60%;
+  }
+}
+

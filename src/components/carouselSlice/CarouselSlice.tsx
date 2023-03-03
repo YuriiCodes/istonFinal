@@ -1,7 +1,12 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from 'react-responsive-carousel';
-import {FrontpageSlicesSlide_Show} from "../../prismic-types";
+import {
+  ArticleSlicesImage,
+  ArticleSlicesSlide_Show,
+  FrontpageSlicesSlide_Show,
+  PageSlicesImage
+} from "../../prismic-types";
 import Image from "next/image";
 import {PrismicImage} from "../../prismic/types/image";
 import styles from "./CarouselSlice.module.scss";
@@ -10,7 +15,7 @@ import {UIBreakpoints} from "../../types/ui";
 
 
 type CarouselSliceProps = {
-  slice: FrontpageSlicesSlide_Show;
+  slice: FrontpageSlicesSlide_Show | ArticleSlicesSlide_Show;
 };
 
 const columns = {
@@ -47,3 +52,4 @@ export const CarouselSlice = ({slice}: CarouselSliceProps) => {
     </div>
   );
 }
+

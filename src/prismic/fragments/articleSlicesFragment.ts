@@ -1,6 +1,7 @@
 import { imageSliceFragment } from 'prismic/slices/Image/imageSliceFragment';
 import { textSliceFragment } from 'prismic/slices/Text/textSliceFragment';
 import { videoSliceFragment } from 'prismic/slices/Video/videoSliceFragment';
+import {slideShowFragment} from "../slices/SlideShow/SlideShowFragment";
 
 const type = 'Article';
 
@@ -10,5 +11,6 @@ export const articleSlices = `
     ${textSliceFragment(type)}
     ${imageSliceFragment(type)}
     ${videoSliceFragment(type)}
+    ${slideShowFragment(type)}
   }
 `;

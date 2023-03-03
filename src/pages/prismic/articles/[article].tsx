@@ -83,7 +83,6 @@ export const getServerSideProps: GetServerSideProps<ArticleProps> = async ({
   const variables = { uid, lang };
   const cacheKey = `${lang}-uid-${uid}`;
 
-  console.log(articleQuery);
   const [layoutData, pageData] = await Promise.all([
     layoutDataQuery(lang),
     query(articleQuery, {

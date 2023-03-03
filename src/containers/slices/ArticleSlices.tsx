@@ -3,7 +3,7 @@ import { prismicSliceToTextSlice } from 'prismic/slices/Text/TextSlice';
 import { prismicSliceToVideoSlice } from 'prismic/slices/Video/VideoSlice';
 import {
   ArticleSlices as PrismicArticleSlices,
-  ArticleSlicesImage,
+  ArticleSlicesImage, ArticleSlicesSlide_Show,
   ArticleSlicesText,
   ArticleSlicesVideo,
 } from 'prismic-types';
@@ -44,14 +44,10 @@ export function ArticleSlices({ data = [] }: Props) {
                 {prismicSliceToImageSlice(s as ArticleSlicesImage)}
               </Section>
             );
-
+          case 'slide_show': {
+            return <CarouselSlice key={key} slice={s as ArticleSlicesSlide_Show}/>
+          }
           default: {
-            // Might be a custom slice
-            if (s.__typename === 'ArticleSlicesSlide_show') {
-              // console.log(JSON.stringify(s));
-              // return <pre>{JSON.stringify(s)}</pre>
-              // return <CarouselSlice key={key} slice={s}/>
-            }
             logger.info(`unknown slice type ${s.type}`, {metadata: {slice: s}});
             return null;
           }
@@ -60,3 +56,4 @@ export function ArticleSlices({ data = [] }: Props) {
     </>
   );
 }
+

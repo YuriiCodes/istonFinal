@@ -14,7 +14,7 @@ const ContentSecurityPolicy = `
   img-src 'self' data: blob: i.vimeocdn.com;
   style-src 'self' 'unsafe-inline' fonts.googleapis.com cookiehub.net static.cookiehub.com p.typekit.net;
   font-src 'self' fonts.gstatic.com use.typekit.net;
-  frame-src www.youtube-nocookie.com player.vimeo.com;
+  frame-src www.youtube-nocookie.com player.vimeo.com open.spotify.com spotify.com;
   media-src 'self' prismic-io.s3.amazonaws.com;
   connect-src 'self' ws: wss: vimeo.com plausible.io *.google-analytics.com *.analytics.google.com *.googletagmanager.com ds.cookiehub.net cookiehub.net;
 `;

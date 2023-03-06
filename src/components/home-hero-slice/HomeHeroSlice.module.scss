@@ -7,25 +7,53 @@
   top: 0px;
   left: 0px;
 
+  &__titleSection{
+    @media (max-width: $min-tablet) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   &__title {
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 10%;
     max-width: 50vw;
     z-index: $zindex-hero;
     color: $color-font-contrast;
-    font-size: 54px;
+    font-size: $h1-size;
+    @media (max-width: $min-tablet) {
+      position: static;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      color: $color-font;
+    }
   }
   &__actions {
     position: absolute;
 
-    top: 17%;
+    top: 20%;
     left: 80%;
     z-index: $zindex-hero;
+    @media (max-width: $min-tablet) {
+      position: static;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   &__image {
     position: absolute;
-    top: 33%;
+    @media (max-width: $min-tablet) {
+      position: static;
+      top: 0;
+      left: 0;
+    }
+    top: 45%;
     left: 10%;
     width: 100%;
     height: 100%;
@@ -39,6 +67,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media (max-width: $min-tablet) {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
 
   &__ctaButton{
     margin-top: 5vh;

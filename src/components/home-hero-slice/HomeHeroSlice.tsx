@@ -18,6 +18,7 @@ import s from "./HomeHeroSlice.module.scss";
 import {ArrowLink} from "../arrow-link/arrowLink";
 import {ArrowLinkWithText} from "../arrow-link/arrowLinkWithText";
 import Link from "next/link";
+import {useIsMobile} from "../../hooks/useIsMobile";
 
 type Props = {
   slice: FrontpageSlicesHome_Hero_Slice,
@@ -242,14 +243,15 @@ function Plane(props) {
 }
 
 export const HomeHeroSlice = ({slice}: Props) => {
+  const isMobile = useIsMobile();
   const {fps, background} = useControls({
     background: '#10161b',
     fps: false
   })
   return (
     <>
-      <div className={s.canvas}>
-        <Canvas gl={{alpha: false}}>
+      {!isMobile && <div className={s.canvas}>
+        <Canvas>
           <color args={[background]} attach="background"/>
           <PerspectiveCamera makeDefault position={[0, 4, 0]}/>
           <Plane/>
@@ -257,25 +259,30 @@ export const HomeHeroSlice = ({slice}: Props) => {
         </Canvas>
         <Leva collapsed/>
         {fps && <Stats/>}
+      </div>}
+      <div>
+        <div className={s.canvas__titleSection}>
+          <h2
+            className={s.canvas__title}>{(slice.variation?.primary?.title[0]?.text)}</h2>
+          <div className={s.canvas__actions}>
+             <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"} variation={isMobile ? "dark" : "light"}/>
+          </div>
+        </div>
+        <div className={s.canvas__image}>
+          {prismicSliceToImageSlice(slice as PageSlicesImage)}
+        </div>
 
-      </div>
-      <h2 className={s.canvas__title}>{(slice.variation?.primary?.title[0]?.text)}</h2>
-      <div className={s.canvas__actions}>
-        <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"}/>
-      </div>
-      <div className={s.canvas__image}>
-        {prismicSliceToImageSlice(slice as PageSlicesImage)}
-      </div>
-      <div className={s.secondaryArea}>
-        <h1
-          className={s.secondaryArea__secondaryTitle}>{slice.variation?.primary?.secondatytitle}</h1>
-        <div className={s.secondaryArea__descriptionArea}>
-          <p>{slice.variation?.primary?.description[0]?.text}</p>
-          <a href={"/"}>
-            <button className={s.secondaryArea__ctaButton}>
-              Sjá nánar
-            </button>
-          </a>
+        <div className={s.secondaryArea}>
+          <h1
+            className={s.secondaryArea__secondaryTitle}>{slice.variation?.primary?.secondatytitle}</h1>
+          <div className={s.secondaryArea__descriptionArea}>
+            <p>{slice.variation?.primary?.description[0]?.text}</p>
+            <a href={"/"}>
+              <button className={s.secondaryArea__ctaButton}>
+                Sjá nánar
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@
   left: 0px;
 
   &__titleSection{
-    @media (max-width: $min-tablet) {
+    @media (max-width: $min-desktop) {
       display: flex;
       flex-direction: column;
       word-break: break-word;
@@ -16,13 +16,13 @@
   }
   &__title {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 10%;
-    max-width: 50vw;
+    max-width: 70vw;
     z-index: $zindex-hero;
     color: $color-font-contrast;
-    font-size: $h1-size;
-    @media (max-width: $min-tablet) {
+    font-size: $h2-size;
+    @media (max-width: $min-desktop) {
       position: static;
       top: 0;
       left: 0;
@@ -38,7 +38,7 @@
     top: 20%;
     left: 80%;
     z-index: $zindex-hero;
-    @media (max-width: $min-tablet) {
+    @media (max-width: $min-desktop) {
       position: static;
       top: 0;
       left: 0;
@@ -49,12 +49,12 @@
   }
   &__image {
     position: absolute;
-    @media (max-width: $min-tablet) {
+    @media (max-width: $min-desktop) {
       position: static;
       top: 0;
       left: 0;
     }
-    top: 45%;
+    top: 30%;
     left: 10%;
     width: 100%;
     height: 100%;
@@ -68,7 +68,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: $min-tablet) {
+  @media (max-width: $min-desktop) {
     flex-direction: column;
     height: 100%;
     justify-content: center;

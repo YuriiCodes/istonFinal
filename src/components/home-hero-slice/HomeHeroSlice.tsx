@@ -15,9 +15,7 @@ import {FrontpageSlicesHome_Hero_Slice, PageSlicesImage} from "../../prismic-typ
 import {prismicSliceToImageSlice} from "../../prismic/slices/Image/ImageSlice";
 
 import s from "./HomeHeroSlice.module.scss";
-import {ArrowLink} from "../arrow-link/arrowLink";
 import {ArrowLinkWithText} from "../arrow-link/arrowLinkWithText";
-import Link from "next/link";
 import {useIsMobile} from "../../hooks/useIsMobile";
 
 type Props = {

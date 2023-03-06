@@ -1,3 +1,25 @@
-.embeddedFrame {
-  border-radius: 12px;
+@import 'styles/config';
+
+.container {
+  background-color: $color-date;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  @media (max-width: $min-tablet) {
+    flex-direction: column;
+  }
+  h2 {
+    color: $color-secondary;
+    font-size: $h1-size;
+  }
+  .embeddedFrameContainer{
+    width: 40%;
+    &__embeddedFrame {
+      border-radius: 12px;
+    }
+  }
+
 }
+

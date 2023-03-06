@@ -61,6 +61,9 @@
             },
             "slide_show": {
               "type": "SharedSlice"
+            },
+            "embed_album_section": {
+              "type": "SharedSlice"
             }
           }
         }

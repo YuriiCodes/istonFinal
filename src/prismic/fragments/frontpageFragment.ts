@@ -10,7 +10,7 @@ export const frontpageFragment =  /* GraphQL */ `
             ... on FrontpageSlicesMarketing_blockDefault{
               primary {
                 image,
-                text
+                text,
               }
             }
           }
@@ -54,6 +54,18 @@ export const frontpageFragment =  /* GraphQL */ `
             ... on FrontpageSlicesImageDefault {
               primary {
                 image
+              }
+            }
+          }
+        }
+        ... on FrontpageSlicesEmbed_album_section {
+          variation {
+            __typename
+            ... on FrontpageSlicesEmbed_album_sectionDefault {
+              primary {
+                title
+                description
+                playlisturl
               }
             }
           }

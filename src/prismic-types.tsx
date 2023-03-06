@@ -49,7 +49,28 @@ export type ArticleConnectionEdge = {
   node: Article;
 };
 
-export type ArticleSlices = ArticleSlicesImage | ArticleSlicesSlide_Show | ArticleSlicesText | ArticleSlicesVideo;
+export type ArticleSlices = ArticleSlicesEmbed_Album_Section | ArticleSlicesImage | ArticleSlicesSlide_Show | ArticleSlicesText | ArticleSlicesVideo;
+
+export type ArticleSlicesEmbed_Album_Section = {
+  __typename?: 'ArticleSlicesEmbed_album_section';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<ArticleSlicesEmbed_Album_SectionVariation>;
+};
+
+export type ArticleSlicesEmbed_Album_SectionDefault = {
+  __typename?: 'ArticleSlicesEmbed_album_sectionDefault';
+  primary?: Maybe<ArticleSlicesEmbed_Album_SectionDefaultPrimary>;
+};
+
+export type ArticleSlicesEmbed_Album_SectionDefaultPrimary = {
+  __typename?: 'ArticleSlicesEmbed_album_sectionDefaultPrimary';
+  description?: Maybe<Scalars['Json']>;
+  playlisturl?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['Json']>;
+};
+
+export type ArticleSlicesEmbed_Album_SectionVariation = ArticleSlicesEmbed_Album_SectionDefault;
 
 export type ArticleSlicesImage = {
   __typename?: 'ArticleSlicesImage';
@@ -172,7 +193,28 @@ export type FrontpageConnectionEdge = {
   node: Frontpage;
 };
 
-export type FrontpageSlices = FrontpageSlicesHome_Hero_Slice | FrontpageSlicesImage | FrontpageSlicesInteresting_Links | FrontpageSlicesMarketing_Block | FrontpageSlicesSlide_Show | FrontpageSlicesText | FrontpageSlicesVideo;
+export type FrontpageSlices = FrontpageSlicesEmbed_Album_Section | FrontpageSlicesHome_Hero_Slice | FrontpageSlicesImage | FrontpageSlicesInteresting_Links | FrontpageSlicesMarketing_Block | FrontpageSlicesSlide_Show | FrontpageSlicesText | FrontpageSlicesVideo;
+
+export type FrontpageSlicesEmbed_Album_Section = {
+  __typename?: 'FrontpageSlicesEmbed_album_section';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<FrontpageSlicesEmbed_Album_SectionVariation>;
+};
+
+export type FrontpageSlicesEmbed_Album_SectionDefault = {
+  __typename?: 'FrontpageSlicesEmbed_album_sectionDefault';
+  primary?: Maybe<FrontpageSlicesEmbed_Album_SectionDefaultPrimary>;
+};
+
+export type FrontpageSlicesEmbed_Album_SectionDefaultPrimary = {
+  __typename?: 'FrontpageSlicesEmbed_album_sectionDefaultPrimary';
+  description?: Maybe<Scalars['Json']>;
+  playlisturl?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['Json']>;
+};
+
+export type FrontpageSlicesEmbed_Album_SectionVariation = FrontpageSlicesEmbed_Album_SectionDefault;
 
 export type FrontpageSlicesHome_Hero_Slice = {
   __typename?: 'FrontpageSlicesHome_hero_slice';

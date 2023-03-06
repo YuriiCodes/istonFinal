@@ -46,6 +46,18 @@ export const frontpageQuery = /* GraphQL */ `
             }
           }
         }
+        ... on FrontpageSlicesEmbed_album_section {
+          variation {
+            __typename
+            ... on FrontpageSlicesEmbed_album_sectionDefault {
+              primary {
+                title
+                description
+                playlisturl
+              }
+            }
+          }
+        }
         ... on FrontpageSlicesImage {
           type
           label

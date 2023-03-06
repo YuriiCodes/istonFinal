@@ -1,15 +1,9 @@
-import {prismicSliceToImageSlice} from 'prismic/slices/Image/ImageSlice';
-import {prismicSliceToTextSlice} from 'prismic/slices/Text/TextSlice';
 import {prismicSliceToVideoSlice} from 'prismic/slices/Video/VideoSlice';
 import {
-  ArticleSlicesText,
-  FrontpageSlices,
+  FrontpageSlices, FrontpageSlicesEmbed_Album_Section,
   FrontpageSlicesHome_Hero_Slice,
-  FrontpageSlicesHome_Hero_SliceDefault, FrontpageSlicesImage,
+  FrontpageSlicesImage,
   FrontpageSlicesMarketing_Block, FrontpageSlicesSlide_Show,
-  PageSlices as PrismicPageSlices,
-  PageSlicesImage,
-  PageSlicesText,
   PageSlicesVideo,
 } from 'prismic-types';
 
@@ -24,6 +18,7 @@ import {
   FrontPageImageSlice
 } from "../../components/front-page-image-slice/FrontPageImageSlice";
 import {CarouselSlice} from "../../components/carouselSlice/CarouselSlice";
+import {EmbeddedAlbumSlice} from "../../components/EmbededAlbumSlice/EmbeddedAlbumSlice";
 
 type Props = {
   data?: Array<FrontpageSlices>;
@@ -68,6 +63,10 @@ export function FrontPageSlices({data = []}: Props) {
             return (
               <CarouselSlice key={key} slice={slice}/>
             )
+          }
+          case 'FrontpageSlicesEmbed_album_section': {
+            const slice = s as FrontpageSlicesEmbed_Album_Section;
+            return <EmbeddedAlbumSlice key={key} slice={slice}/>
           }
           default:
             logger.info(`unknown slice type ${s.__typename}`, {metadata: {slice: s}});

@@ -13,7 +13,6 @@ type HeaderProps = { children?: React.ReactNode };
 export const Header = ({ children }: HeaderProps) => {
   const { setUIState } = useUiState();
   const isMainPage = useIsMainPage();
-  console.log("isMainPage", isMainPage)
 
   const headerRef = useRef<HTMLElement>(null);
 

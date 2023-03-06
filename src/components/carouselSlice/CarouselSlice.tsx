@@ -2,10 +2,8 @@ import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from 'react-responsive-carousel';
 import {
-  ArticleSlicesImage,
   ArticleSlicesSlide_Show,
-  FrontpageSlicesSlide_Show,
-  PageSlicesImage
+  FrontpageSlicesSlide_Show
 } from "../../prismic-types";
 import Image from "next/image";
 import {PrismicImage} from "../../prismic/types/image";

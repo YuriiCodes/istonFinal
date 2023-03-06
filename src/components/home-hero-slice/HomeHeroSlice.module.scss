@@ -11,6 +11,7 @@
     @media (max-width: $min-tablet) {
       display: flex;
       flex-direction: column;
+      word-break: break-word;
     }
   }
   &__title {
@@ -71,6 +72,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: center;
+    align-items: center;
   }
 
   &__ctaButton{

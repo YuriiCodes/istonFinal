@@ -27,13 +27,17 @@ export const InterestingLinksSlice = ({slice}: InterestingLinksSliceProps) => {
       <div className={s.linksSection}>
         {/*1 row*/}
         <div className={s.linksSection__linkRow}>
+           {/*@ts-ignore*/}
           <div className={s.linksSection__linkRow__link}><ArrowLinkWithText to={slice.variation?.primary?.link1?.url} text={slice.variation?.primary?.link1text} /></div>
+          {/*@ts-ignore*/}
           <div className={s.linksSection__linkRow__link}><ArrowLinkWithText to={slice.variation?.primary?.link2?.url} text={slice.variation?.primary?.link2text} /></div>
         </div>
 
         {/*2 row*/}
         <div className={s.linksSection__linkRow}>
+          {/*@ts-ignore*/}
           <div className={s.linksSection__linkRow__link}><ArrowLinkWithText to={slice.variation?.primary?.link3?.url} text={slice.variation?.primary?.link3text} /></div>
+          {/*@ts-ignore*/}
           <div className={s.linksSection__linkRow__link}><ArrowLinkWithText to={slice.variation?.primary?.link4?.url} text={slice.variation?.primary?.link4text} /></div>
         </div>
       </div>

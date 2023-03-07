@@ -33,6 +33,7 @@ export const GridLayout = ({ children, as, className, debug }: GridLayoutProps) 
     return null;
   }
 
+  // @ts-ignore
   return <Wrapper className={c(s.gridLayout, className, { debug })}>{children}</Wrapper>;
 };
 
@@ -60,6 +61,7 @@ export const GridLayoutItem = ({
     });
 
   return (
+    // @ts-ignore
     <Wrapper className={c(s.gridLayout__item, className, classes)}>{children}</Wrapper>
   );
 };

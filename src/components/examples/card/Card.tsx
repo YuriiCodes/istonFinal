@@ -17,7 +17,9 @@ type CardProps = {
 export const Card = ({ title, date, link, children, as }: CardProps) => {
   const Wrapper = as ?? 'li';
 
+
   return (
+    // @ts-ignore
     <Wrapper className={s.card}>
       <H2 as="h3" className={s.card__title}>
         {link ? <Link to={link}>{title}</Link> : title}

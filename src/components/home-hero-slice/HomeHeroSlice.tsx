@@ -150,6 +150,7 @@ extend({PolarTextureMaterial})
 const CAUSTICS_TEXTURE = './images/rt_caustics_grayscale.png';
 const DEBUG_TEXTURE = './images/uv-checker.png';
 
+// @ts-ignore
 function Plane(props) {
   const material = useRef()
   const {gl} = useThree()
@@ -168,9 +169,13 @@ function Plane(props) {
   }, [texture, gl])
 
   useFrame(({clock, pointer}) => {
+    // @ts-ignore
+
     material.current.uniforms.time.value = clock.getElapsedTime()
     // lerp center to pointer
+    // @ts-ignore
     debugMesh.current.position.lerp(lerpTarget.tube, 0.05)
+    // @ts-ignore
     material.current.uniforms.pointer.value.lerp(lerpTarget.uv, 0.05)
   })
 
@@ -208,6 +213,7 @@ function Plane(props) {
         rotation-x={Math.PI * -0.5}
         onPointerMove={(e) => {
           if (trackPointer) {
+            // @ts-ignore
             lerpTarget.uv.set(MathUtils.clamp(e.uv.x, 0.3, 0.7), MathUtils.clamp(e.uv.y, 0.3, 0.7))
             lerpTarget.tube.set(MathUtils.clamp(e.point.x, size * -0.2, size * 0.2), 0.5, MathUtils.clamp(e.point.z, 5 * -0.2, 5 * 0.2))
           }
@@ -217,6 +223,7 @@ function Plane(props) {
           lerpTarget.tube.set(0, 0.5, 0)
         }}>
         <planeGeometry args={[size, size, 128, 128]}/>
+        {/*// @ts-ignore*/}
         <polarTextureMaterial
           ref={material}
           map={matProps.debug ? debugTexture : texture}
@@ -226,6 +233,7 @@ function Plane(props) {
           {...fragmentProps}
         />
       </mesh>
+      {/*// @ts-ignore*/}
       <mesh visible={matProps.debug} ref={debugMesh} position={[0, 0.5, 0]}
             rotation-x={Math.PI * -0}>
         <cylinderGeometry args={[0.1, 0.1, 1, 64]}/>

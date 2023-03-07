@@ -41,7 +41,9 @@ export const Grid = ({
       gridStyle = { ...gridStyle, ...entry };
     });
 
+
   return (
+    // @ts-ignore
     <Wrapper className={c(s.grid, className, { container })} style={gridStyle}>
       {children}
     </Wrapper>

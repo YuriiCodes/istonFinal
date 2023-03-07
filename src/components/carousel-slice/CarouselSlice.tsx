@@ -25,6 +25,10 @@ const columns = {
 export const CarouselSlice = ({slice}: CarouselSliceProps) => {
   const images = [] as PrismicImage[];
   for (let i = 1; i < 5; i++) {
+    if (!slice.variation?.items) {
+      return null;
+    }
+    // @ts-ignore
     images.push(slice.variation?.items[0]['image' + i]);
   }
 

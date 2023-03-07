@@ -24,5 +24,6 @@ export const Section = ({
   const SectionEl = as;
   const content = container ? <Container>{children}</Container> : children;
 
+  // @ts-ignore
   return <SectionEl className={c(s.section, className)}>{content}</SectionEl>;
 };

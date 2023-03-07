@@ -43,6 +43,17 @@
     }
   }
 
+  @media (max-width: $min-tablet) {
+    &__linkRow {
+      margin: 0;
+
+      &__link {
+        width: 100%;
+        padding: 1em em;
+      }
+    }
+  }
+
   &__linkRow:first-child {
     margin-left: 12em;
     margin-bottom: 2em;

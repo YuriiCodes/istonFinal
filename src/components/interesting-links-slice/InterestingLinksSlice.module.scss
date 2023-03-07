@@ -27,6 +27,7 @@
 }
 
 .linksSection {
+  margin-left:  0;
   &__linkRow {
     @extend .flexContainer;
     justify-content: flex-start;
@@ -45,11 +46,15 @@
 
   @media (max-width: $min-tablet) {
     &__linkRow {
-      margin: 0;
-
+      margin: 0 !important;
+      width: 100%;
       &__link {
         width: 100%;
+        margin-top: .5em;
         padding: 1em em;
+      }
+      &__link:last-child {
+        margin-bottom: 2em;
       }
     }
   }

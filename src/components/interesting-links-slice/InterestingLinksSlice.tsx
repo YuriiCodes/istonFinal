@@ -2,7 +2,6 @@ import s from "./InterestingLinksSlice.module.scss";
 import {FrontpageSlicesInteresting_Links} from "../../prismic-types";
 import {Picture} from "../picture/Picture";
 import {ArrowLinkWithText} from "../arrow-link/arrowLinkWithText";
-import {ArrowLink} from "../arrow-link/arrowLink";
 
 type InterestingLinksSliceProps = {
   slice: FrontpageSlicesInteresting_Links

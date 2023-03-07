@@ -1,0 +1,54 @@
+@import 'styles/config';
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $min-tablet) {
+    flex-direction: column;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.imageAndTitles {
+  @extend .flexContainer;
+
+  &__textSection {
+    margin-left: 3vw;
+
+    h2 {
+      font-size: $h2-size;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.linksSection {
+  &__linkRow {
+    @extend .flexContainer;
+    justify-content: flex-start;
+    margin-bottom: 4em;
+
+    &__link {
+      background-color: $color-slideshow;
+      padding: 4em 8em;
+      width: 35vw;
+    }
+
+    &__link:first-child {
+      margin-right: 2em;
+    }
+  }
+
+  &__linkRow:first-child {
+    margin-left: 12em;
+    margin-bottom: 2em;
+  }
+
+  &__linkRow:last-child {
+    margin-left: 8em;
+  }
+}

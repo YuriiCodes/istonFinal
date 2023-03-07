@@ -1,4 +1,3 @@
-import {linkResolver} from "../../prismic/linkResolver";
 import {Picture} from "../picture/Picture";
 import {Link} from "../link/Link";
 

@@ -11,7 +11,7 @@ import {
 import { Section } from 'components/section/Section';
 
 import { logger } from 'utils/logger';
-import {CarouselSlice} from "../../components/carouselSlice/CarouselSlice";
+import {CarouselSlice} from "../../components/carousel-slice/CarouselSlice";
 
 type Props = {
   data?: Array<PrismicArticleSlices>;

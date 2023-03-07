@@ -46,18 +46,6 @@ export const frontpageFragment =  /* GraphQL */ `
             }
           }
         }
-        ... on FrontpageSlicesImage {
-          type
-          label
-              variation{
-            __typename
-            ... on FrontpageSlicesImageDefault {
-              primary {
-                image
-              }
-            }
-          }
-        }
         ... on FrontpageSlicesEmbed_album_section {
           variation {
             __typename
@@ -66,6 +54,65 @@ export const frontpageFragment =  /* GraphQL */ `
                 title
                 description
                 playlisturl
+              }
+            }
+          }
+        }
+        ... on FrontpageSlicesInteresting_links {
+          variation {
+            __typename
+            ... on FrontpageSlicesInteresting_linksDefault {
+              primary {
+                title
+                description
+                image
+                link1 {
+                  _linkType
+                  ... on _ExternalLink {
+                    url
+                  }
+                }
+                link1text
+
+
+                  link2 {
+                  _linkType
+                  ... on _ExternalLink {
+                    url
+                  }
+                }
+                link2text
+
+
+                  link3 {
+                  _linkType
+                  ... on _ExternalLink {
+                    url
+                  }
+                }
+                link3text
+
+                  link4 {
+                  _linkType
+                  ... on _ExternalLink {
+                    url
+                  }
+                }
+                link4text
+
+
+              }
+            }
+          }
+        }
+        ... on FrontpageSlicesImage {
+          type
+          label
+              variation{
+            __typename
+            ... on FrontpageSlicesImageDefault {
+              primary {
+                image
               }
             }
           }

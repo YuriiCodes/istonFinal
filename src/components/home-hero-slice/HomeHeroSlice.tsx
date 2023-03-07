@@ -17,6 +17,7 @@ import {prismicSliceToImageSlice} from "../../prismic/slices/Image/ImageSlice";
 import s from "./HomeHeroSlice.module.scss";
 import {ArrowLinkWithText} from "../arrow-link/arrowLinkWithText";
 import {useIsMobile} from "../../hooks/useIsMobile";
+import {useUiState} from "../../hooks/useUiState";
 
 type Props = {
   slice: FrontpageSlicesHome_Hero_Slice,
@@ -242,6 +243,7 @@ function Plane(props) {
 
 export const HomeHeroSlice = ({slice}: Props) => {
   const isMobile = useIsMobile();
+  const { uiState, setUIState } = useUiState();
   const {fps, background} = useControls({
     background: '#10161b',
     fps: false
@@ -259,13 +261,14 @@ export const HomeHeroSlice = ({slice}: Props) => {
         {fps && <Stats/>}
       </div>}
       <div>
-        <div className={s.canvas__titleSection}>
+        { !uiState.isNavOpen && <div className={s.canvas__titleSection}>
           <h2
             className={s.canvas__title}>{(slice.variation?.primary?.title[0]?.text)}</h2>
           <div className={s.canvas__actions}>
-             <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"} variation={isMobile ? "dark" : "light"}/>
+            <ArrowLinkWithText to={"https://google.com"} text={"Sjá nánar"}
+                               variation={isMobile ? "dark" : "light"}/>
           </div>
-        </div>
+        </div>}
         <div className={s.canvas__image}>
           {prismicSliceToImageSlice(slice as PageSlicesImage)}
         </div>

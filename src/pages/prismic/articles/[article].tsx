@@ -5,7 +5,7 @@ import { articleQuery } from 'prismic/queries/articleQuery';
 import { layoutDataQuery } from 'prismic/queries/layoutQuery';
 import { Article, Layout } from 'prismic-types';
 
-import { H1, H2, H3 } from 'components/heading/Heading';
+import { H2, H3 } from 'components/heading/Heading';
 import { Link } from 'components/link/Link';
 import { asText, RichText } from 'components/rich-text/RichText';
 import { Section } from 'components/section/Section';
@@ -18,6 +18,7 @@ import {ArticleHeader} from "../../../components/article-header/ArticleHeader";
 import {
   ArticleDescription
 } from "../../../components/article-description/ArticleDescription";
+import {useUiState} from "../../../hooks/useUiState";
 
 export type ArticleProps = {
   preview: boolean;
@@ -29,6 +30,7 @@ export type ArticleProps = {
 export default function ArticleComponent(
   data: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
+  const { uiState} = useUiState();
   const article = data.article ?? null;
 
   if (!article) {
@@ -44,10 +46,10 @@ export default function ArticleComponent(
     <>
       <PrismicMeta data={article} layout={data.layout} />
       <article>
-        <Section>
-          <ArticleHeader article={article} />
-          <ArticleDescription article={article} />
-        </Section>
+        {!uiState.isNavOpen && <Section>
+          <ArticleHeader article={article}/>
+          <ArticleDescription article={article}/>
+        </Section>}
 
         <ArticleSlices data={article.slices ?? []} />
 

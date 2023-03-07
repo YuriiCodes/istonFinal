@@ -243,7 +243,7 @@ function Plane(props) {
 
 export const HomeHeroSlice = ({slice}: Props) => {
   const isMobile = useIsMobile();
-  const { uiState, setUIState } = useUiState();
+  const { uiState} = useUiState();
   const {fps, background} = useControls({
     background: '#10161b',
     fps: false

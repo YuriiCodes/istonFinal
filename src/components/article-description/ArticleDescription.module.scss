@@ -7,6 +7,11 @@
     @include h2;
     margin-left: 12em;
     width: 60%;
+    @media (max-width: $min-tablet) {
+      margin-left: 0;
+      width: 100%;
+      padding: 0 2em;
+    }
   }
 }
 

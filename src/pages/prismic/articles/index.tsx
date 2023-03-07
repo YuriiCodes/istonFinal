@@ -1,7 +1,6 @@
 import {query} from 'api/prismic';
 import {GetServerSideProps, InferGetServerSidePropsType} from 'next';
 import {useRouter} from 'next/router';
-import {linkResolver} from 'prismic/linkResolver';
 import {isFirstCursor, pageNumberToCursor} from 'prismic/paging';
 import {articlesQuery} from 'prismic/queries/articlesQuery';
 import {layoutDataQuery} from 'prismic/queries/layoutQuery';
@@ -9,13 +8,12 @@ import {Article, Layout, PageInfo} from 'prismic-types';
 
 import {H1} from 'components/heading/Heading';
 import {Link} from 'components/link/Link';
-import {asText, RichText} from 'components/rich-text/RichText';
+import {asText} from 'components/rich-text/RichText';
 import {Section} from 'components/section/Section';
 import {PrismicMeta} from 'containers/meta/PrismicMeta';
 
 import {ExcludesFalse} from 'utils/excludesFalse';
 import {localeToPrismicLocale} from 'utils/i18n';
-import {Picture} from "../../../components/picture/Picture";
 import {NewsCard} from "../../../components/news-card/NewsCard";
 
 export type NewsProps = {
